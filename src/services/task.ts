@@ -6,9 +6,9 @@ import UserModel from "../models/user";
 
 const insertTask = async (idPr: string, task: Task) => {
     const responseTask = await TaskModel.create(task);
-    await ProjectModel.findByIdAndUpdate(
+    const a = await ProjectModel.findByIdAndUpdate(
         idPr,
-        { $push: { tasks: responseTask._id } },
+        { $push: { task: responseTask._id } },
     )
     return responseTask
 };
@@ -20,8 +20,7 @@ const getTask = async (id: string) => {
 
 const getMyTasks = async (idUs: string, status: number) => {
 
-    const userId = await UserModel.findOne({ id: idUs })
-    const responseTask = await TaskModel.find({ users: idUs, status: status });
+    const responseTask = await TaskModel.find({ user: idUs, status: status });
     return responseTask;
 }
 const getTasks = async () => {
@@ -35,7 +34,7 @@ const updateTask = async (id: string, data: Task) => {
 }
 
 const deleteTask = async (id: string) => {
-    const responseTask = await TaskModel.findByIdAndDelete({ _id: id });
+    const responseTask = await TaskModel.deleteOne({ _id: id });
     return responseTask;
 }
 

@@ -1,0 +1,700 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Documentation",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "SignUp",
+        "operationId": "SignUp",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SignUpRequest"
+                  },
+                  {
+                    "example": {
+                      "name": "Gramajo",
+                      "password": "369852",
+                      "email": "gramajoemail1@gmail.com"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "Gramajo",
+                "password": "369852",
+                "email": "gramajoemail1@gmail.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login",
+        "operationId": "Login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/LoginRequest"
+                  },
+                  {
+                    "example": {
+                      "password": "369852",
+                      "email": "gramajoemail1@gmail.com"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "password": "369852",
+                "email": "gramajoemail1@gmail.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/project": {
+      "post": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Create",
+        "operationId": "Create",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateRequest"
+                  },
+                  {
+                    "example": {
+                      "title": "Titulo proyecto 5",
+                      "description": "Descripcion para delete 2",
+                      "dueDate": "09/07/2023",
+                      "status": "0",
+                      "user": "6678e4a2b51324c1901a37f3"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "title": "Titulo proyecto 5",
+                "description": "Descripcion para delete 2",
+                "dueDate": "09/07/2023",
+                "status": "0",
+                "user": "6678e4a2b51324c1901a37f3"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      },
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "List",
+        "operationId": "List",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/project/6678e5dcb51324c1901a37f9": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "List by Id",
+        "operationId": "ListbyId",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/project/myprojects/6678e4a2b51324c1901a37f3/1": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "List My Projects",
+        "operationId": "ListMyProjects",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/project/6678e4c1b51324c1901a37f5": {
+      "put": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Update",
+        "operationId": "Update",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateRequest"
+                  },
+                  {
+                    "example": {
+                      "description": "Descripcion para update"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "description": "Descripcion para update"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/project/6678e6dab51324c1901a3805": {
+      "delete": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Delete",
+        "operationId": "Delete",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/task/6678e5dcb51324c1901a37f9": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Create",
+        "operationId": "PostCreate",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateRequest"
+                  },
+                  {
+                    "example": {
+                      "title": "Titulo tarea 6",
+                      "description": "Descripcion 6",
+                      "dueDate": "09/07/2023",
+                      "status": "1",
+                      "user": "6678e4a2b51324c1901a37f3"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "title": "Titulo tarea 6",
+                "description": "Descripcion 6",
+                "dueDate": "09/07/2023",
+                "status": "1",
+                "user": "6678e4a2b51324c1901a37f3"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/task": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "List",
+        "operationId": "GetList",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/task/6678eb2943add52c65c1fe36": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "List by Id",
+        "operationId": "GetListbyId",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/task/mytasks/6678e4a2b51324c1901a37f3/0": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "List My Projects",
+        "operationId": "GetListMyProjects",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/task/6678e852b51324c1901a3809": {
+      "put": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Update",
+        "operationId": "PutUpdate",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateRequest1"
+                  },
+                  {
+                    "example": {
+                      "description": "Descripcion para update",
+                      "user": "6678e2a1b51324c1901a37ed"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "description": "Descripcion para update",
+                "user": "6678e2a1b51324c1901a37ed"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/task/6678eaa743add52c65c1fe31": {
+      "delete": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Delete",
+        "operationId": "Delete1",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzhlMmExYjUxMzI0YzE5MDFhMzdlZCIsImlhdCI6MTcxOTE5ODQ5MiwiZXhwIjoxNzE5MjAyMDkyfQ.m0aveSO3WLu4U1UO68c_q-VF-qserrM7uMvLeHbVWzg"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SignUpRequest": {
+        "title": "SignUpRequest",
+        "required": [
+          "name",
+          "password",
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Gramajo",
+          "password": "369852",
+          "email": "gramajoemail1@gmail.com"
+        }
+      },
+      "LoginRequest": {
+        "title": "LoginRequest",
+        "required": [
+          "password",
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "password": "369852",
+          "email": "gramajoemail1@gmail.com"
+        }
+      },
+      "CreateRequest": {
+        "title": "CreateRequest",
+        "required": [
+          "title",
+          "description",
+          "dueDate",
+          "status",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "dueDate": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "user": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "title": "Titulo proyecto 5",
+          "description": "Descripcion para delete 2",
+          "dueDate": "09/07/2023",
+          "status": "0",
+          "user": "6678e4a2b51324c1901a37f3"
+        }
+      },
+      "UpdateRequest": {
+        "title": "UpdateRequest",
+        "required": [
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "description": "Descripcion para update"
+        }
+      },
+      "UpdateRequest1": {
+        "title": "UpdateRequest1",
+        "required": [
+          "description",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "user": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "description": "Descripcion para update",
+          "user": "6678e2a1b51324c1901a37ed"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "User"
+    },
+    {
+      "name": "Project"
+    },
+    {
+      "name": "Task"
+    }
+  ]
+}
